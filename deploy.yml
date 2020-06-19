@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myweb-deploy1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+       env: production
+  template:
+    metadata:
+     name: myweb-pod1
+     labels:
+       env: production
+    spec:
+      containers:
+      - name: myweb-con1
+        image: souvikdutta7012/mykubephp:v5
